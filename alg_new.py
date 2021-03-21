@@ -30,40 +30,24 @@ def make_SI(raw_sig):
             if sig_list[0] == pair[0]:
                 sig_list.insert(0,pair[1])
                 pair_list.remove(pair)
-                print(pair)
-                print(sig_list)
-                print(1)
-                print('\n')
                 break
                 
 
             elif sig_list[0] == pair[1]:
                 sig_list.insert(0,pair[0])
                 pair_list.remove(pair)
-                print(pair)
-                print(sig_list)
-                print(2)
-                print('\n')
                 break
                 
 
             elif sig_list[-1] == pair[0]:
                 sig_list.append(pair[1])
                 pair_list.remove(pair)
-                print(pair)
-                print(sig_list)
-                print(3)
-                print('\n')
                 break
                 
 
             elif sig_list[-1] == pair[1]:
                 sig_list.append(pair[0])
                 pair_list.remove(pair)
-                print(pair)
-                print(sig_list)
-                print(4)
-                print('\n')
                 break
                 
                 
@@ -71,10 +55,6 @@ def make_SI(raw_sig):
                 sig_list.append(pair[0])
                 sig_list.append(pair[1])
                 pair_list.remove(pair)
-                print(pair)
-                print(sig_list)
-                print(5)
-                print('\n')
                 break
     
     # Initial a list to store reconstructed raw data
