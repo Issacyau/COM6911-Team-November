@@ -1,5 +1,5 @@
-# Algoritnm for Signal image generation
-def make_SI(raw_sig):
+# Algoritnm for Signal data arrangement
+def order_SI(raw_sig):
     
     # According to the number of the types of sensor data
     # Generate a list of all possible pairs of each two sensor data
@@ -57,9 +57,5 @@ def make_SI(raw_sig):
                 pair_list.remove(pair)
                 break
     
-    # Initial a list to store reconstructed raw data
-    sig_img = []
-    for sig_order in sig_list:
-        sig_img.append(raw_sig[sig_order-1])
     
-    return sig_list, sig_img
+    return sig_list
