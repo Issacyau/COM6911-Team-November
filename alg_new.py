@@ -1,9 +1,11 @@
 # Algoritnm for Signal data arrangement
 def order_SI(raw_sig):
     
+    # The raw should be a [n,sensor_type] size array
+    
     # According to the number of the types of sensor data
     # Generate a list of all possible pairs of each two sensor data
-    type_sensor = len(raw_sig)
+    type_sensor = raw_sig.shape[1]
     pair_list = []
     
     for i in range (1,type_sensor):
@@ -56,6 +58,19 @@ def order_SI(raw_sig):
                 sig_list.append(pair[1])
                 pair_list.remove(pair)
                 break
+                
+            
+    left_sig_list = []
+    right_sig_list = []
+
+    left_sig_list.append(sig_list[1])
+    for i in range(len(sig_list)-1):
+        left_sig_list.append(sig_list[i])
+
+    right_sig_list.append(sig_list[1])
+    for i in range(len(sig_list)-2):
+        right_sig_list.append(sig_list[i+2])
+    right_sig_list.append(sig_list[0])
     
     
-    return sig_list
+    return sig_list, left_sig_list, right_sig_list
